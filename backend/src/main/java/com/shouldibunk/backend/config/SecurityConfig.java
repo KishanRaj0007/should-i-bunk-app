@@ -48,8 +48,11 @@ public class SecurityConfig {
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
+        // This now reads the URL directly from the environment variable you set on Render
+        String frontendUrl = System.getenv().getOrDefault("FRONTEND_URL", "http://localhost:5173");
+
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("https://shouldibunkbykishan.netlify.app"));
+        configuration.setAllowedOrigins(List.of(frontendUrl));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
