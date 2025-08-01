@@ -1,0 +1,15 @@
+# Java/Maven backend files
+/backend/target/
+/backend/.mvn/
+*.class
+*.log
+
+# Node/React frontend files
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env*
+
+# IDE files
+.vscode/
+.idea/
+*.iml
