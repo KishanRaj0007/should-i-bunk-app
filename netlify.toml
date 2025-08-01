@@ -1,0 +1,14 @@
+# This tells Netlify how to build your site
+[build]
+  # The command to run to build your frontend
+  command = "npm run build"
+  # The folder to deploy after the build is done
+  publish = "frontend/dist"
+  # The subfolder where your frontend lives
+  base = "frontend"
+
+# This is the redirect rule for React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
