@@ -1,7 +1,9 @@
 import axios from 'axios';
 // This file will configure axios to always talk to our Spring Boot server and to automatically include the JWT on every request.
+// The app will use the VITE_API_BASE_URL when deployed,
+// and the localhost URL as a fallback for local development.
 const apiClient = axios.create({
-    baseURL: 'http://localhost:8080/api', // The base URL of our Spring Boot backend
+    baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api', 
     headers: {
         'Content-Type': 'application/json'
     }
