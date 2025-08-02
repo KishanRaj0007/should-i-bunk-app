@@ -14,7 +14,6 @@ import com.shouldibunk.backend.domain.User;
 
 @RestController
 @RequestMapping("/api/users")
-// @CrossOrigin("http://localhost:5173")
 @RequiredArgsConstructor // for dependency injection
 public class UserController {
 
