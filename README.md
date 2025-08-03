@@ -52,13 +52,13 @@ A comprehensive web application built from scratch to help college students mana
 
 ### Landing & Authentication Pages
 
-| Landing Page | Login Page | Signup Page | Forgot Password |
-|:------------:|:----------:|:-----------:|:----------------:|
-| ![Login](frontend/assets/Signin.png) | ![Register](frontend/assets/Signup.png) | ![Forgot Password](frontend/assets/Forgot.png) |
+| Login Page | Signup Page | Forgot Password |
+|:----------:|:-----------:|:----------------:|
+| ![Login](frontend/src/assets/Signin.png) | ![Register](frontend/src/assets/Signup.png) | ![Forgot Password](frontend/src/assets/Forgot.png) |
 
 ### Main Dashboard
 
-![Dashboard](frontend/assets/Dashboard.png)
+![Dashboard](frontend/src/assets/Dashboard.png)
 
 
 ---
