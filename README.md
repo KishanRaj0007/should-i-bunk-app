@@ -3,7 +3,7 @@
 A comprehensive web application built from scratch to help college students manage their attendance efficiently. This tool provides real-time tracking, predictive analysis, and a secure, user-friendly interface to help students stay on top of their academic requirements.
 
 **Live Demo:** [https://shouldibunkbykishan.netlify.app/](https://shouldibunkbykishan.netlify.app/)
-**Video Demo:** [Watch the Project Demo on Google Drive](https://your-google-drive-link-here)
+**Video Demo:** [Watch the Project Demo on Google Drive](https://drive.google.com/file/d/1-jLUiEgQEOQjPKXq6MbBs0cGQgExrRp7/view?usp=sharing)
 
 ---
 
@@ -51,12 +51,15 @@ A comprehensive web application built from scratch to help college students mana
 ## 📸 Screenshots
 
 ### Landing & Authentication Pages
+
 | Landing Page | Login Page | Signup Page | Forgot Password |
-| :---: | :---: | :---: | :---: |
-| *Your Landing Page Screenshot Here* | *Your Login Page Screenshot Here* | *Your Signup Page Screenshot Here* | *Your Forgot Password Screenshot Here* |
+|:------------:|:----------:|:-----------:|:----------------:|
+| ![Login](frontend/assets/Signin.png) | ![Register](frontend/assets/Signup.png) | ![Forgot Password](frontend/assets/Forgot.png) |
 
 ### Main Dashboard
-*Your Dashboard Screenshot Here*
+
+![Dashboard](frontend/assets/Dashboard.png)
+
 
 ---
 
