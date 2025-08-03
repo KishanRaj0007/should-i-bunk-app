@@ -21,19 +21,18 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
-    private final EmailService emailService; // Add this
+    private final EmailService emailService;
 
     public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder,
                            AuthenticationManager authenticationManager, JwtService jwtService,
-                           EmailService emailService) { // Add EmailService here
+                           EmailService emailService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
         this.jwtService = jwtService;
-        this.emailService = emailService; // Add this
+        this.emailService = emailService;
     }
     
-    // --- YOUR WORKING METHODS (UNCHANGED) ---
     @Transactional
     public User registerUser(User user){
         if(userRepository.findByEmail(user.getEmail()).isPresent()){
@@ -53,7 +52,6 @@ public class AuthService {
         return new LoginResponse(jwtToken);
     }
     
-    // --- ADD THESE TWO NEW METHODS ---
     @Transactional
     public void generatePasswordResetToken(String email) {
         User user = userRepository.findByEmail(email)

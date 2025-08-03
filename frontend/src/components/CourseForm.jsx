@@ -19,11 +19,9 @@ const CourseForm = ({ onCourseCreated }) => {
             const response = await apiClient.post('/api/courses', {
                 courseName,
                 attendanceThreshold,
-                // We'll set default values for other fields for now
                 semesterEndDate: '2025-12-31',
                 weeklySchedule: {}
             });
-            // Call the function passed from the parent component
             onCourseCreated(response.data); 
         } catch (err) {
             console.error("Failed to create course", err);

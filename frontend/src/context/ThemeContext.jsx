@@ -17,17 +17,15 @@ export const CustomThemeProvider = ({ children }) => {
                     mode,
                     ...(mode === 'light'
                         ? {
-                            // palette values for light mode
                             background: {
-                                default: '#f4f6f8', // A very light grey for the main background
-                                paper: '#ffffff', // Pure white for paper/cards
+                                default: '#f4f6f8',
+                                paper: '#ffffff',
                             },
                         }
                         : {
-                            // palette values for dark mode
                             background: {
                                 default: '#121212',
-                                paper: '#1e1e1e', // A slightly lighter dark for paper/cards
+                                paper: '#1e1e1e',
                             },
                         }),
                 },

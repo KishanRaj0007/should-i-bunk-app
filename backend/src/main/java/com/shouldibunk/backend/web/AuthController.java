@@ -17,7 +17,6 @@ public class AuthController {
         this.authService = authService;
     }
 
-    // DTO for the reset password request
     public record ResetPasswordRequest(String token, String newPassword) {} // Field is named newPassword
     public record ForgotPasswordRequest(String email) {}
 
@@ -45,7 +44,6 @@ public class AuthController {
 
     @PostMapping("/reset-password")
     public ResponseEntity<Void> resetPassword(@RequestBody ResetPasswordRequest request) {
-        // Corrected from request.password() to request.newPassword()
         authService.resetPassword(request.token(), request.newPassword());
         return ResponseEntity.ok().build();
     }

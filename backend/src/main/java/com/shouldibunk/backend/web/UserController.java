@@ -14,14 +14,12 @@ import com.shouldibunk.backend.domain.User;
 
 @RestController
 @RequestMapping("/api/users")
-@RequiredArgsConstructor // for dependency injection
+@RequiredArgsConstructor 
 public class UserController {
 
     private final UserRepository userRepository;
     @GetMapping("/me")
     public ResponseEntity<User> getCurrentUser(@AuthenticationPrincipal User user) {
-        // The @AuthenticationPrincipal annotation automatically retrieves the
-        // User object we stored in the security context.
         return ResponseEntity.ok(user);
     }
     @GetMapping("/count")

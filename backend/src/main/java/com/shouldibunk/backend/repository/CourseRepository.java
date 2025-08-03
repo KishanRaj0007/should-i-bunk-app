@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
 
-    // UPDATED: Added "OrderByIdAsc" to always sort by creation order
     List<Course> findAllByUserIdOrderByIdAsc(Long userId);
 }

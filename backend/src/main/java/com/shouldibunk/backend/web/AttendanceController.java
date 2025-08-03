@@ -19,13 +19,10 @@ public class AttendanceController {
 
     @PostMapping
     public ResponseEntity<CourseResponseDto> recordAttendance(@RequestBody AttendanceRecordRequestDto requestDto) {
-        // 1. The service updates the attendance and returns the raw Course entity
         Course updatedCourse = attendanceService.recordAttendance(requestDto);
         
-        // 2. We use the CourseService to build the full DTO, including the last updated date
         CourseResponseDto responseDto = courseService.getCourseDtoById(updatedCourse.getId());
         
-        // 3. Return the complete DTO to the frontend
         return ResponseEntity.ok(responseDto);
     }
 }

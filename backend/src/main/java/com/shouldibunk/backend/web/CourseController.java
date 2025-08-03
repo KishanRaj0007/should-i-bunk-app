@@ -19,20 +19,17 @@ public class CourseController {
     @PostMapping
     public ResponseEntity<Void> createCourse(@RequestBody CourseRequestDto courseRequestDto) {
         courseService.createCourse(courseRequestDto);
-        // The frontend will refetch the list to get the new course with all its calculated data.
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping
     public ResponseEntity<List<CourseResponseDto>> getAllCoursesForUser() {
-        // This is now much simpler. It just returns the list the service built.
         return ResponseEntity.ok(courseService.getCoursesForCurrentUser());
     }
 
     @PutMapping("/{courseId}")
     public ResponseEntity<Void> updateCourse(@PathVariable Long courseId, @RequestBody CourseRequestDto courseRequestDto) {
         courseService.updateCourse(courseId, courseRequestDto);
-        // The frontend will refetch the list to see the updated data.
         return ResponseEntity.ok().build();
     }
 

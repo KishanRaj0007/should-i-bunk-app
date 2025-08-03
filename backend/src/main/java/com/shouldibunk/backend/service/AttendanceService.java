@@ -32,7 +32,6 @@ public class AttendanceService {
             throw new AccessDeniedException("You do not have permission for this course.");
         }
 
-        // Simple "create-only" logic as you requested
         AttendanceRecord newRecord = AttendanceRecord.builder()
                 .course(course)
                 .date(LocalDate.now())
@@ -40,7 +39,6 @@ public class AttendanceService {
                 .build();
         attendanceRecordRepository.save(newRecord);
 
-        // Update counters based on the new record
         if (requestDto.status() == AttendanceStatus.ATTENDED) {
             course.setClassesAttended(course.getClassesAttended() + 1);
             course.setTotalClassesHeld(course.getTotalClassesHeld() + 1);

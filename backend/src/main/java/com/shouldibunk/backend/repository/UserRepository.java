@@ -7,8 +7,6 @@ import java.util.Optional;
 
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    // Spring Data JPA is smart! It automatically creates a query
-    // to find a User by their email address just from the method name.
     Optional<User> findByEmail(String email);
     Optional<User> findByPasswordResetToken(String token);
 }

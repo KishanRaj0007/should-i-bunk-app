@@ -9,6 +9,5 @@ public interface AttendanceRecordRepository extends JpaRepository<AttendanceReco
 
     Optional<AttendanceRecord> findTopByCourseIdOrderByDateDesc(Long courseId);
 
-    // This is the new, more specific method to prevent the crash
     Optional<AttendanceRecord> findTopByCourseIdAndDateOrderByCreatedAtDesc(Long courseId, LocalDate date);
 }

@@ -2,6 +2,7 @@
 
 A comprehensive web application built from scratch to help college students manage their attendance efficiently. This tool provides real-time tracking, predictive analysis, and a secure, user-friendly interface to help students stay on top of their academic requirements.
 
+**Live Demo:** [https://shouldibunkbykishan.netlify.app/](https://shouldibunkbykishan.netlify.app/)
 **Video Demo:** [Watch the Project Demo on Google Drive](https://your-google-drive-link-here)
 
 ---
@@ -39,6 +40,14 @@ A comprehensive web application built from scratch to help college students mana
 
 ---
 
+## ☁️ Deployment
+
+- **Backend (Spring Boot):** The application was containerized using **Docker** and pushed to Docker Hub. It is deployed as a Web Service on **Render** using the public Docker image.
+- **Database (PostgreSQL):** A managed PostgreSQL instance is hosted on **Render** and connected to the backend service via an internal URL.
+- **Frontend (React):** The static site is deployed on **Netlify**, connected directly to the GitHub repository for continuous deployment.
+
+---
+
 ## 📸 Screenshots
 
 ### Landing & Authentication Pages
@@ -56,10 +65,11 @@ A comprehensive web application built from scratch to help college students mana
 To run this project on your local machine:
 
 ### Prerequisites
-* Java 21+
+* Java 17+
 * Maven 3.8+
 * Node.js 18+
 * A running PostgreSQL instance
+* Docker Desktop (optional, for building images)
 
 ### 1. Clone the Repository
 ```bash

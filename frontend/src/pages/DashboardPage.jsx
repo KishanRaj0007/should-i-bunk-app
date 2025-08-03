@@ -49,10 +49,8 @@ const DashboardPage = () => {
         navigate('/login');
     };
 
-    // THIS FUNCTION IS NOW CORRECTED
     const handleCourseCreated = () => {
         setShowForm(false);
-        // We refetch all data to get the new course list with all its calculated data from the backend.
         fetchData();
     };
 

@@ -5,7 +5,6 @@ import { Container, Box, Typography, TextField, Button, Link, Alert, Paper } fro
 import LockResetIcon from '@mui/icons-material/LockReset';
 
 const ResetPasswordPage = () => {
-    // useParams() reads the URL parameter, in our case the 'token'
     const { token } = useParams();
     const navigate = useNavigate();
     

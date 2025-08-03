@@ -34,7 +34,6 @@ public class CourseService {
                 .collect(Collectors.toList());
     }
 
-    // --- THIS IS THE PUBLIC METHOD THAT WAS MISSING ---
     @Transactional(readOnly = true)
     public CourseResponseDto getCourseDtoById(Long courseId) {
         Course course = courseRepository.findById(courseId)
