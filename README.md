@@ -24,7 +24,7 @@ A comprehensive web application built from scratch to help college students mana
 ## 💻 Tech Stack
 
 ### Backend
-* **Java 21** & **Spring Boot 3**
+* **Java 17** & **Spring Boot 3**
     * Spring Web
     * Spring Security (JWT Authentication)
     * Spring Data JPA
