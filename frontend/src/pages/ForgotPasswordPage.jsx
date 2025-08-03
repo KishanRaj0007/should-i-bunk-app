@@ -14,7 +14,7 @@ const ForgotPasswordPage = () => {
         setMessage('');
         setError('');
         try {
-            await apiClient.post('/auth/forgot-password', { email });
+            await apiClient.post('/api/auth/forgot-password', { email });
             setMessage('If an account with that email exists, a password reset link has been sent.');
         } catch (err) {
             // Display a generic error to prevent users from guessing which emails are registered

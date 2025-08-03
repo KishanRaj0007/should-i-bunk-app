@@ -13,7 +13,7 @@ const LoginPage = () => {
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
-            const response = await apiClient.post('/auth/login', { email, password });
+            const response = await apiClient.post('/api/auth/login', { email, password });
             localStorage.setItem('jwt_token', response.data.token);
             sessionStorage.setItem('showWelcome', 'true');
             navigate('/dashboard');

@@ -16,7 +16,7 @@ const SignupPage = () => {
         event.preventDefault();
         setError('');
         try {
-            await apiClient.post('/auth/register', { name, email, password });
+            await apiClient.post('/api/auth/register', { name, email, password });
             alert('Signup successful! Please log in.');
             navigate('/login');
         } catch (err) {

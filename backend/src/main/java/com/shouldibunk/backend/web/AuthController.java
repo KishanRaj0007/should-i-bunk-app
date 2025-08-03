@@ -21,6 +21,11 @@ public class AuthController {
     public record ResetPasswordRequest(String token, String newPassword) {} // Field is named newPassword
     public record ForgotPasswordRequest(String email) {}
 
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("Auth service is running!");
+    }
+
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody User user){
         User registeredUser = authService.registerUser(user);
