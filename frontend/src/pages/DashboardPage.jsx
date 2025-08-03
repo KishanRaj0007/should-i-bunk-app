@@ -29,8 +29,8 @@ const DashboardPage = () => {
     const fetchData = useCallback(async () => {
         try {
             const [userResponse, coursesResponse] = await Promise.all([
-                apiClient.get('/users/me'),
-                apiClient.get('/courses')
+                apiClient.get('/api/users/me'),
+                apiClient.get('/api/courses')
             ]);
             setUser(userResponse.data);
             setCourses(coursesResponse.data);
@@ -58,7 +58,7 @@ const DashboardPage = () => {
 
     const handleRecordAttendance = async (courseId, status) => {
         try {
-            const response = await apiClient.post('/attendance', { courseId, status });
+            const response = await apiClient.post('/api/attendance', { courseId, status });
             const updatedCourse = response.data;
             setCourses(currentCourses =>
                 currentCourses.map(c => (c.id === updatedCourse.id ? updatedCourse : c))
@@ -71,7 +71,7 @@ const DashboardPage = () => {
     const handleDeleteCourse = async (courseId) => {
         if (window.confirm('Are you sure you want to delete this course?')) {
             try {
-                await apiClient.delete(`/courses/${courseId}`);
+                await apiClient.delete(`/api/courses/${courseId}`);
                 fetchData();
             } catch (err) {
                 setError('Failed to delete course.');

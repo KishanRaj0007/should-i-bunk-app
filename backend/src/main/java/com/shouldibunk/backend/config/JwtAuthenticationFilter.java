@@ -41,13 +41,18 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
 
         final String authHeader = request.getHeader("Authorization");
+        System.out.println("JWT Filter - Request URI: " + request.getRequestURI());
+        System.out.println("JWT Filter - Authorization header: " + (authHeader != null ? "present" : "missing"));
+        
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            System.out.println("JWT Filter - No valid Authorization header, continuing...");
             filterChain.doFilter(request, response);
             return;
         }
 
         final String jwt = authHeader.substring(7);
         final String userEmail = jwtService.extractUsername(jwt);
+        System.out.println("JWT Filter - Extracted email: " + userEmail);
 
         if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
@@ -57,6 +62,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 );
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authToken);
+                System.out.println("JWT Filter - Authentication successful for user: " + userEmail);
+            } else {
+                System.out.println("JWT Filter - Token validation failed for user: " + userEmail);
             }
         }
         filterChain.doFilter(request, response);

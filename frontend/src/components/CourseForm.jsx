@@ -16,7 +16,7 @@ const CourseForm = ({ onCourseCreated }) => {
         }
 
         try {
-            const response = await apiClient.post('/courses', {
+            const response = await apiClient.post('/api/courses', {
                 courseName,
                 attendanceThreshold,
                 // We'll set default values for other fields for now

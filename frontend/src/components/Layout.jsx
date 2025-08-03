@@ -8,7 +8,7 @@ const Layout = ({ children, handleLogout }) => {
     const [userCount, setUserCount] = useState(0);
 
     useEffect(() => {
-        apiClient.get('/users/count').then(response => {
+        apiClient.get('/api/users/count').then(response => {
             setUserCount(response.data);
         });
     }, []);
